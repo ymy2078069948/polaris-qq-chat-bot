@@ -2,9 +2,9 @@
 # 不可空值
 Bot:
   # 账号
-  QQ: 2762018040
+  QQ: 
   # 密码
-  Password: 0.0WenShiYue
+  Password: 
   # 登录协议 ANDROID_PHONE | ANDROID_PAD | ANDROID_WATCH
   Protocol: ANDROID_PHONE
   # bot的名字
