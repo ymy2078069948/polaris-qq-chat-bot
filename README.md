@@ -52,8 +52,8 @@ Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置
 
 - 邮箱  Yuki7017@outlook.com
 - B站 [决定学写代码的Murphy的个人空间_哔哩哔哩_bilibili](https://space.bilibili.com/41761329)
-
 - Gitee [October.Wr (october_Wr) - Gitee.com](https://gitee.com/october_Wr)
+- 开黑啦 https://kaihei.co/OM6Efk
 
 ## 项目介绍
 
