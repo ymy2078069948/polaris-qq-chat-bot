@@ -8,13 +8,23 @@
 
 <center>一个基于miari的qq聊天机器人</center>
 
+
+
 <center>Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置</center>
+
+
 
 <center>项目的名字来源于我的游戏ID</center>
 
+
+
 <center>同时打算以这个项目作为我的毕业设计,所以决定叫Polaris</center>
 
+
+
 <center>项目会持续更新直到我毕业(还剩一年)</center>
+
+
 
 
 
