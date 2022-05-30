@@ -1,0 +1,160 @@
+# QQ相关配置
+# 不可空值
+Bot:
+  # 账号
+  QQ: 2762018040
+  # 密码
+  Password: 0.0WenShiYue
+  # 登录协议 ANDROID_PHONE | ANDROID_PAD | ANDROID_WATCH
+  Protocol: ANDROID_PHONE
+  # bot的名字
+  Name: Polaris
+  # bot的备注
+  Remark: 测试1
+  # bot的介绍
+  Introduction: Alice介绍
+  # 工作路径
+  Workspace: work
+  # 缓存路径
+  CacheDir: cache
+  # 聊天功能的websocket端口
+  WebSocketPort: 8700
+  # 可以通过那个qq进行管理 部分可用还没写完
+  Admin: 815049548
+  # 多少秒撤回 建议10s以上 图片上传需要时间
+  RecallIn: 10
+  #允许监听那些消息 [DefaultMessageHandler|FriendInputStatusChangedEventHandler|MemberUnmuteEventHandler|MemberJoinEventHandler...]
+  ActivateHandler: ['NudgeEventHandler','MessageEventHandler','MemberSpecialTitleChangeEventHandler','MemberPermissionChangeEventHandler','FriendInputStatusChangedEventHandler','MemberMuteEventHandler','MemberUnmuteEventHandler','MemberJoinEventHandler','NudgeEventHandler','MemberLeaveEventHandler','WhenCalledEventHandler']
+  # 对那些群生效
+  ApplyGroups: [817581299]
+  #是否启用敏感词封禁 0 撤回  n 大于0 封禁n秒   n<0 撤回加封禁n秒
+  SensitiveWordsBanned: 5
+  # ban禁词
+  BanWordFilePath: work\TalkData\BanWords.txt
+  # Selenium驱动路径
+  SeleniumDriverPath: C:\Program Files (x86)\Microsoft\Edge\Application\msedgedriver.exe
+  # Selenium驱动名称 谷歌:webdriver.chrome.driver ,edge:webdriver.edge.driver 其他浏览器自己百度吧
+  SeleniumDriverName: webdriver.edge.driver
+  # 发言频率 单位为毫秒
+  FrequencyOfSpeeches: 500
+
+  # 一些回复
+  # 所有的回复支持命令 参考 你还戳,有病吧你||雅斯雷  [F:\IDEA\QQBot-Mirai\work\usingFile\ghs][random]
+  # 被解除禁言时
+  UnmuteSay: 哈哈哈,我可以说话了
+  # 群成员加入时
+  MemberJoinSay: 欢迎
+  # 群成员离开时
+  MemberLeaveSay: 走了呜呜呜
+  # 对被封禁的人说
+  ToBannedNumberSay: 你违规了
+  ToUnableBannedNumberSay: 我现在ban不了你,但是你给我等着
+  # 戳一戳响应
+  ToNudgeSay: [ '别戳了','你还戳,有病吧你||雅斯雷','[work\usingFile\ghs][random]' ]
+  # 当被叫到时
+  WhenCalled: 怎么了?&&[work\usingFile\ghs][1581048091064.jpg]
+
+# 插件设置
+FunctionSet:
+  # 功能优先级 
+  Priority: ['SpecificReply','MusicShare','BaiduImageSearch','BaiduTranslate','WeatherInfo','WeiboTop10','SignIn','BrowserCrawling']
+
+  # 百度翻译api
+  BaiduTranslate:
+    IsUsing: true
+    BaiduTranslateAPPID: 20210402000759494
+    BaiduTranslateKey: HtgGCVnZVKoeOFTvoYz6
+    CommandSet: ['IsUsingBaiduTranslate']
+
+  # 固定回复
+  SpecificReply:
+    # 是否启用 true|false
+    IsUsing: true
+    # 是否@触发
+    IfNeedAt: false
+    # 回复 [关键词1][关键词2][关键词3]...->回复1&&回复2...
+    # 发送本地文件
+    # 发送img voice video 等文件进行回复
+    # image最好不要过5M voice大小不要超过1M
+    # [路径到文件夹][文件名|random]
+
+    # 从api获取内容进行回复
+    # 目前可以
+    # [POST|GET][txt][url] //获取文本
+    # [POST|GET][txt][url][Regular] //获取文本后正则提取 Regular Java正则表达式 - 用于获取
+    # [POST|GET][image][url] //通过api获取图片 api返回一张图片那种
+    # 例
+      # {
+      #   'code': 0,
+      #   'msg': '',
+      #   'info':
+      #         {
+      #             'pid': '82584014',
+      #             'uid': '1670478',
+      #             'title': '銀髪悪魔っ娘②',
+      #         }
+      #   'author': 'ろむむ/8月末納期お仕事募集中',
+      #   'r18': 'false',
+      #   'width': '799',
+      #   'height': '765',
+      #   'tags': '['オリジナル','原创','悪魔っ娘','恶魔娘','ASMR','悪魔','恶魔','銀髪','银发','仰臥','仰卧','サキュバスproject','ルナ','Luna','はいてない','真空' ]',
+      #   'url': 'https://pximg.lolicon.run/img-original/img/2020/06/27/01/21/50/82584014_p0.jpg'
+      # }
+    # [POST|GET][json][url][info-pid*txt&info-title*txt&url*image]
+    #                          key-key-key...*type[txt|voice|image]
+
+
+    # 回复文件路径
+    # 分为三个只是为的清楚 可以只修改一个
+    SpecificReplyFilePath: work\TalkData\SpecificReply.txt
+    SpecificReplyLocalFilePath: work\TalkData\SpecificReplyLocal.txt
+    SpecificReplyNetworkFilePath: work\TalkData\SpecificReplyNetwork.txt
+    CommandSet: ['IsUsingSpecificReply','SpecificReplyIfNeedAt']
+
+  # 音乐分享 暂时只支持网易云
+  MusicShare:
+    IsUsing: true
+    # 是否@触发
+    IfNeedAt: false
+    # 歌单链接
+    Playlist: https://y.music.163.com/m/playlist?id=826019094&userid=551118830&creatorId=551118830
+    ChangePlaylist: 更新歌单
+    # 更新歌单需要扫码登录网易云
+    CommandSet: ['音乐','来首歌']
+  # 使用百度搜图功能
+  BaiduImageSearch:
+    IsUsing: true
+    IfNeedAt: false
+    CommandSet: [ '搜图' ]
+  # 天气查询
+  WeatherInfo:
+    IsUsing: true
+    IfNeedAt: false
+    CommandSet: [ '天气' ]
+  WeiboTop10:
+    IsUsing: true
+    IfNeedAt: false
+    CommandSet: [ '微博热榜' ]
+  SignIn:
+    IsUsing: true
+    IfNeedAt: false
+    SignIn: Polaris我要签到
+    # 对签到的人说 xxx是第几个签到的+ToSignInSay
+    ToSignInSay: 嘿嘿嘿
+    # 查看自己是否签到
+    DidISignIn: 我签到了吗
+    # 查看别人是否签到 xxx+DidHeSignIn或者DidHeSignIn+xxx xxx为昵称或者特殊头衔
+    DidHeSignIn: 签到了吗
+    CommandSet: [ '重置' ]
+  # 实验功能,不保证稳定性
+  BrowserCrawling:
+    IsUsing: true
+    IfNeedAt: false
+    UrlList: ['https://www.csdn.net/']
+    XpathList: ['//*[@id="floor-www-index_558"]/div/div[3]/div[1]/div[2]/div[1]']
+    TriggerWordList: ['页面抓取测试']
+
+
+
+
+

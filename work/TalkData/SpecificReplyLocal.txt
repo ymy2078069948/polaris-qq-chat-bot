@@ -1,0 +1,10 @@
+# 本地文件
+# 	图片
+[随机图片发送测试]->[work\usingFile\ghs][random]
+[随机图片撤回发送测试]->[work\usingFile\ghs][random][recall]
+[随机闪照发送测试]->[work\usingFile\ghs][random][IsFlashImage]
+[指定图片发送测试]->[work\usingFile\ghs][maomi_b6f04280c6198c34ff4918d86f81e00d.jpg]
+# 	音频
+[随机音频发送测试]->[work\usingFile\voice][random]
+[指定音频发送测试]->[work\usingFile\voice][醉猫2.mp3]
+

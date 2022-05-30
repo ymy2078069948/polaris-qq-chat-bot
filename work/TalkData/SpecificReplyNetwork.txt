@@ -1,0 +1,12 @@
+#api
+#文本
+[api测试-文本]->[GET][txt][https://api.ixiaowai.cn/ylapi/index.php]
+
+#带正则提取的
+[api测试-文本-正则]->[GET][txt][https://api.ixiaowai.cn/ylapi/index.php][\b[a-z]{3}\b]
+
+#图片	api返回一张图
+[api测试-图片]->[GET][image][https://api.ixiaowai.cn/api/api.php]
+
+
+[setu]->pid&&uid&&title&&[GET][json][https://gurepu.lolicon.run/api/pixiv/setu.php][pid*txt&uid*txt&title*txt&url*image]

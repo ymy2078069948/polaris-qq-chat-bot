@@ -1,0 +1,2 @@
+这里有一个叫pytorch_model.bin的
+但是太大了
