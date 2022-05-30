@@ -276,7 +276,7 @@
 edge://settings/help
 ```
 
-![image-20220529111717577](F:\PolarisProject\GitHub\polaris-qq-chat-bot\README\image-20220529111717577.png)
+![image-20220529111717577](README\image-20220529111717577.png)
 
 
 
@@ -290,7 +290,7 @@ edge://settings/help
 
 下载完为一个压缩包
 
-![image-20220529112053321](F:\PolarisProject\GitHub\polaris-qq-chat-bot\README\image-20220529112053321.png)
+![image-20220529112053321](README\image-20220529112053321.png)
 
 **将压缩包内的msedgedriver.exe解压出来**
 
@@ -298,7 +298,7 @@ edge://settings/help
 
 建议放在C:\Program Files (x86)\Microsoft\Edge\Application\内
 
-![image-20220529112135525](F:\PolarisProject\GitHub\polaris-qq-chat-bot\README\image-20220529112135525.png)
+![image-20220529112135525](README\image-20220529112135525.png)
 
 
 
