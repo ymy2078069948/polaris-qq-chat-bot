@@ -1,8 +1,34 @@
 # Polaris
 
-基于miari的qq聊天机器人
+![Polaris](https://github.com/lzt815049548/polaris-qq-chat-bot/blob/main/README/921de2aeb19d5dc69371c8b49707231f1653916221.png)
 
-功能大概有
+---
+
+
+
+<center>一个基于miari的qq聊天机器人</center>
+
+<center>Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置</center>
+
+<center>项目的名字来源于我的游戏ID</center>
+
+<center>同时打算以这个项目作为我的毕业设计,所以决定叫Polaris</center>
+
+<center>项目会持续更新直到我毕业(还剩一年)</center>
+
+
+
+---
+
+#### 声明
+
+**一切开发旨在学习，请勿用于非法用途**
+
+- Polaris项目只是单纯的想分享出来,所以完全免费,也不接受任何捐赠
+- 不支持也不建议用Polaris项目来盈利
+- Polaris基于mirai
+
+#### 功能大概有
 
 - 响应取消禁言
 - 加入欢迎
