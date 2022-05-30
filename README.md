@@ -37,7 +37,6 @@ Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置
 - 群发言管理,违规时撤回禁言
 - 戳一戳响应
 - 触发回复
-
 - 触发回复,可发送本地图片音频,api返回的图片和音频
 - 音乐分享
 - 百度图片搜索
@@ -47,8 +46,14 @@ Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置
 - 签到
 - edge浏览器页面抓取为图片发送
 - 自定义插件
+- 还在持续更新中
 
+### 联系我
 
+- 邮箱  Yuki7017@outlook.com
+- B站 [决定学写代码的Murphy的个人空间_哔哩哔哩_bilibili](https://space.bilibili.com/41761329)
+
+- Gitee [October.Wr (october_Wr) - Gitee.com](https://gitee.com/october_Wr)
 
 ## 项目介绍
 
