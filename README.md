@@ -46,12 +46,18 @@ Polaris是Alice的重构改进版,扩展了原有功能,预留了不少位置
 - 签到
 - edge浏览器页面抓取为图片发送
 - 自定义插件
-- 还在持续更新中
+- 还在持续更新中,计划
+  - 添加数据库
+  - 添加权限系统
+  - 添加ui
+  - 编译安卓版
+  - 添加问答模型
+  - 添加一个词袋模型
 
 ### 联系我
 
 - 邮箱  Yuki7017@outlook.com
-- B站 [决定学写代码的Murphy的个人空间_哔哩哔哩_bilibili](https://space.bilibili.com/41761329)
+- B站 [Aki-Polaris的个人空间_哔哩哔哩_bilibili](https://space.bilibili.com/41761329)
 - Gitee [October.Wr (october_Wr) - Gitee.com](https://gitee.com/october_Wr)
 - 开黑啦 https://kaihei.co/OM6Efk
 
@@ -568,3 +574,8 @@ json:pid&&uid&&title&&[GET][json][https://gurepu.lolicon.run/api/pixiv/setu.php]
 
 ## 插件
 
+### ChatModel
+
+基于GPT2中文闲聊模型实现的一个闲聊ai
+
+因为训练语料来源微博贴吧所以会有一点点暴躁
