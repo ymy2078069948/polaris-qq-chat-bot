@@ -2,9 +2,13 @@
 # 不可空值
 Bot:
   # 账号
-  QQ: 
+  QQ: 2762018040
   # 密码
-  Password: 
+  Password:
+  # 对那些群生效
+  ApplyGroups: [ 817581299 ]
+  # 可以通过那个qq进行管理 部分可用还没写完
+  Admin: 815049548
   # 登录协议 ANDROID_PHONE | ANDROID_PAD | ANDROID_WATCH
   Protocol: ANDROID_PHONE
   # bot的名字
@@ -19,14 +23,11 @@ Bot:
   CacheDir: cache
   # 聊天功能的websocket端口
   WebSocketPort: 8700
-  # 可以通过那个qq进行管理 部分可用还没写完
-  Admin: 
   # 多少秒撤回 建议10s以上 图片上传需要时间
   RecallIn: 10
   #允许监听那些消息 [DefaultMessageHandler|FriendInputStatusChangedEventHandler|MemberUnmuteEventHandler|MemberJoinEventHandler...]
   ActivateHandler: ['NudgeEventHandler','MessageEventHandler','MemberSpecialTitleChangeEventHandler','MemberPermissionChangeEventHandler','FriendInputStatusChangedEventHandler','MemberMuteEventHandler','MemberUnmuteEventHandler','MemberJoinEventHandler','NudgeEventHandler','MemberLeaveEventHandler','WhenCalledEventHandler']
-  # 对那些群生效
-  ApplyGroups: []
+
   #是否启用敏感词封禁 0 撤回  n 大于0 封禁n秒   n<0 撤回加封禁n秒
   SensitiveWordsBanned: 5
   # ban禁词
@@ -57,7 +58,7 @@ Bot:
 # 插件设置
 FunctionSet:
   # 功能优先级 
-  Priority: ['SpecificReply','MusicShare','BaiduImageSearch','BaiduTranslate','WeatherInfo','WeiboTop10','SignIn','BrowserCrawling']
+  Priority: ['SpecificReply','MusicShare','BaiduImageSearch','BaiduTranslate','WeatherInfo','WeiboTop10','SignIn','BrowserCrawling','RemindMe']
 
   # 百度翻译api
   BaiduTranslate:
@@ -72,38 +73,6 @@ FunctionSet:
     IsUsing: true
     # 是否@触发
     IfNeedAt: false
-    # 回复 [关键词1][关键词2][关键词3]...->回复1&&回复2...
-    # 发送本地文件
-    # 发送img voice video 等文件进行回复
-    # image最好不要过5M voice大小不要超过1M
-    # [路径到文件夹][文件名|random]
-
-    # 从api获取内容进行回复
-    # 目前可以
-    # [POST|GET][txt][url] //获取文本
-    # [POST|GET][txt][url][Regular] //获取文本后正则提取 Regular Java正则表达式 - 用于获取
-    # [POST|GET][image][url] //通过api获取图片 api返回一张图片那种
-    # 例
-      # {
-      #   'code': 0,
-      #   'msg': '',
-      #   'info':
-      #         {
-      #             'pid': '82584014',
-      #             'uid': '1670478',
-      #             'title': '銀髪悪魔っ娘②',
-      #         }
-      #   'author': 'ろむむ/8月末納期お仕事募集中',
-      #   'r18': 'false',
-      #   'width': '799',
-      #   'height': '765',
-      #   'tags': '['オリジナル','原创','悪魔っ娘','恶魔娘','ASMR','悪魔','恶魔','銀髪','银发','仰臥','仰卧','サキュバスproject','ルナ','Luna','はいてない','真空' ]',
-      #   'url': 'https://pximg.lolicon.run/img-original/img/2020/06/27/01/21/50/82584014_p0.jpg'
-      # }
-    # [POST|GET][json][url][info-pid*txt&info-title*txt&url*image]
-    #                          key-key-key...*type[txt|voice|image]
-
-
     # 回复文件路径
     # 分为三个只是为的清楚 可以只修改一个
     SpecificReplyFilePath: work\TalkData\SpecificReply.txt
@@ -146,13 +115,24 @@ FunctionSet:
     # 查看别人是否签到 xxx+DidHeSignIn或者DidHeSignIn+xxx xxx为昵称或者特殊头衔
     DidHeSignIn: 签到了吗
     CommandSet: [ '重置' ]
-  # 实验功能,不保证稳定性
+  # 页面抓取[实验功能,不保证稳定性]
   BrowserCrawling:
     IsUsing: true
     IfNeedAt: false
     UrlList: ['https://www.csdn.net/']
     XpathList: ['//*[@id="floor-www-index_558"]/div/div[3]/div[1]/div[2]/div[1]']
     TriggerWordList: ['页面抓取测试']
+
+  # 定时提醒功能
+  # 发送时间+CommandSet+提醒什么
+  # 到时候会@或者发送消息
+  # 如果是当天直接 [n点n分|n点|n|n:n|n.n|n n] n为数字
+  # 当月[dd-[n点n分|n点|n|n:n|n.n|n n]|dd[日|号][n点n分|n点|n|n:n|n.n|n n]]
+  RemindMe:
+    IsUsing: true
+    IfNeedAt: false
+    OkSay: 好的我知道了
+    CommandSet: [ '提醒我','叫我' ]
 
 
 
