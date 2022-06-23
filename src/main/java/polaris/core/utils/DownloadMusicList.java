@@ -30,6 +30,8 @@ public class DownloadMusicList {
         List<WebElement> webElementList = driver.findElements(By.xpath("//a[contains(@href,\"song?\")]"));
         List<String> musicList = new ArrayList<>();
         for (WebElement webElement : webElementList) {
+            System.out.println( webElement.toString());
+
             Map<String,String> stringMap = new HashMap<>();
             String id = webElement.getAttribute("href").split("=")[1];
             String name = webElement.findElement(By.tagName("b")).getAttribute("title");

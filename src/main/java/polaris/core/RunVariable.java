@@ -14,5 +14,6 @@ public class RunVariable {
     public static Bot BOT;
     public static Map<Long, Contact> WSContacts = new HashMap<>();
     public static List<RemindMe> remindMeList = null;
+    public static Map<String,String> FunctionKey = new HashMap<>();
 
 }
