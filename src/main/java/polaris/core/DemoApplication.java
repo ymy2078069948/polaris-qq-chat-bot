@@ -31,11 +31,11 @@ public class DemoApplication {
     }
 
     private static Boolean OnStartLogin() {
-        if (Set.CONFIG.Bot.QQ != null && Set.CONFIG.Bot.Password != null) {
-            RunVariable.BOT = BotFactory.INSTANCE.newBot(Set.CONFIG.Bot.QQ,Set.CONFIG.Bot.Password,new BotConfiguration(){
+        if (Set.CONFIG.BotSet.QQ != null && Set.CONFIG.BotSet.Password != null) {
+            RunVariable.BOT = BotFactory.INSTANCE.newBot(Set.CONFIG.BotSet.QQ,Set.CONFIG.BotSet.Password,new BotConfiguration(){
                 {
-                    setWorkingDir(new File(Set.CONFIG.Bot.Workspace));
-                    setCacheDir(new File(Set.CONFIG.Bot.CacheDir));
+                    setWorkingDir(new File(Set.CONFIG.BotSet.Workspace));
+                    setCacheDir(new File(Set.CONFIG.BotSet.CacheDir));
                     setHeartbeatStrategy(HeartbeatStrategy.STAT_HB);
                     setProtocol(MiraiProtocol.ANDROID_PHONE);
                     fileBasedDeviceInfo("DeviceInfo.json");

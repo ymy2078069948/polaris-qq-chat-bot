@@ -14,5 +14,6 @@ public class RemindMeSet {
     public Boolean IsUsing;
     public Boolean IfNeedAt;
     public String OkSay;
+    public String ErrorSay;
     public List<String> CommandSet;
 }

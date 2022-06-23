@@ -48,7 +48,7 @@ public class FileLoader {
      * @return file path string
      */
     public static File Mp3ToAmr(File source){
-        File target = new File(Set.CONFIG.Bot.Workspace + File.separator + "temp.amr");
+        File target = new File(Set.CONFIG.BotSet.Workspace + File.separator + "temp.amr");
         AudioAttributes audio = new AudioAttributes();
         audio.setCodec("libamr_nb");//编码器
 

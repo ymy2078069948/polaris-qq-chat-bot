@@ -44,7 +44,7 @@ public class ConfigVariable {
 
         try {
             MusicData = FileUtils.readLines(new File("tools/data/MusicData.txt"),"UTF-8");
-            BanWords = FileUtils.readLines(new File(Set.CONFIG.Bot.BanWordFilePath),"utf-8");
+            BanWords = FileUtils.readLines(new File(Set.CONFIG.BotSet.BanWordFilePath),"utf-8");
         } catch (IOException ioException) {
             ioException.printStackTrace();
         }

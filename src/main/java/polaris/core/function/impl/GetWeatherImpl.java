@@ -50,7 +50,7 @@ public class GetWeatherImpl implements Function {
     }
 
     private void getWeatherInfo(String city, Contact contact){
-        System.setProperty(Set.CONFIG.Bot.SeleniumDriverName,Set.CONFIG.Bot.SeleniumDriverPath);
+        System.setProperty(Set.CONFIG.BotSet.SeleniumDriverName,Set.CONFIG.BotSet.SeleniumDriverPath);
         WebDriver driver = new EdgeDriver();
         try {
             driver.get("https://weather.cma.cn/");

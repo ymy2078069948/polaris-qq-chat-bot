@@ -28,15 +28,15 @@ public class NudgeEventHandler extends SimpleListenerHost {
         logger.info("[event]    "+event);
         if (event.getTarget().getId() == event.getBot().getId()){
             if (Set.CONFIG_VARIABLE.NudgeTimes.containsKey(event.getFrom().getId())){
-                if (Set.CONFIG_VARIABLE.NudgeTimes.get(event.getFrom().getId())>Set.CONFIG.Bot.ToNudgeSay.size()){
+                if (Set.CONFIG_VARIABLE.NudgeTimes.get(event.getFrom().getId())>Set.CONFIG.BotSet.ToNudgeSay.size()){
                     Set.CONFIG_VARIABLE.NudgeTimes.remove(event.getFrom().getId());
                 }else {
                     int times = Set.CONFIG_VARIABLE.NudgeTimes.get(event.getFrom().getId());
-                    if (times<=Set.CONFIG.Bot.ToNudgeSay.size()){
-                        event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.ToNudgeSay.get(times - 1), event.getSubject())));
+                    if (times<=Set.CONFIG.BotSet.ToNudgeSay.size()){
+                        event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.ToNudgeSay.get(times - 1), event.getSubject())));
                         Set.CONFIG_VARIABLE.NudgeTimes.put(event.getFrom().getId(),times+1);
                     }else {
-                        event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.ToNudgeSay.get(Set.CONFIG.Bot.ToNudgeSay.size() - 1), event.getSubject())));
+                        event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.ToNudgeSay.get(Set.CONFIG.BotSet.ToNudgeSay.size() - 1), event.getSubject())));
                     }
                 }
 

@@ -12,6 +12,7 @@ import polaris.core.pojo.RemindMe;
 import polaris.core.service.RemindMeService;
 import polaris.core.utils.MessageBuilder;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -31,6 +32,9 @@ public class ScheduleEventHandle {
 
     @Scheduled(fixedRate = 1000*60)
     private void DoRemindMe() {
+        if (RunVariable.remindMeList == null){
+            RunVariable.remindMeList = new ArrayList<>();
+        }
         RunVariable.remindMeList.forEach(event -> {
             if (Math.abs(event.getRemindTime() - System.currentTimeMillis())<1000*30){
                 if (event.getGroupID() != null){

@@ -37,7 +37,7 @@ public class MessageSender {
         }
         if (Set.CONFIG_VARIABLE.SpecificReply.get(msg) != null){
             if (Set.CONFIG_VARIABLE.SpecificReply.get(msg).contains("[recall]")){
-                recallIn = Set.CONFIG.Bot.RecallIn;
+                recallIn = Set.CONFIG.BotSet.RecallIn;
             }
 
             if (recallIn == -1){

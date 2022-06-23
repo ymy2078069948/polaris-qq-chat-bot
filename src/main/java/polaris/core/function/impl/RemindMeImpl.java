@@ -67,7 +67,7 @@ public class RemindMeImpl implements Function {
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
-                        if (time != null){
+                        if (time != null && time > System.currentTimeMillis()){
                             remindMe = new RemindMe();
                             remindMe.setRemindTime(time);
                             remindMe.setSubjectID(event.getFromId());
@@ -84,6 +84,8 @@ public class RemindMeImpl implements Function {
                             RunVariable.remindMeList.add(remindMe);
                             event.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.FunctionSet.RemindMe.OkSay, event.getMessageEvent().getSubject())));
                             return true;
+                        }else {
+                            event.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.FunctionSet.RemindMe.ErrorSay, event.getMessageEvent().getSubject())));
                         }
 
                     }
@@ -93,14 +95,16 @@ public class RemindMeImpl implements Function {
         return false;
     }
 
-    private Long timeFormat(String time) throws ParseException {
+    public static void main(String[] args) throws ParseException {
+        System.out.println(timeFormat("12点"));
+    }
+
+    private static Long timeFormat(String time) throws ParseException {
         Date date = new Date();
-        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String nowTime = dateFormat.format(date);
         String dayString = nowTime.substring(0,10);
         String hourString = nowTime.substring(11, 13);
-        String minString = nowTime.substring(14, 16);
-        System.out.println(dayString +"@"+hourString);
         if (time.contains("-")){
             String[] timePart = time.split("-");
             String timeF = getFormatTimeString(timePart[1],hourString);
@@ -117,7 +121,7 @@ public class RemindMeImpl implements Function {
         }
         return null;
     }
-    private String getFormatTimeString(String time,String hourString){
+    private static String getFormatTimeString(String time, String hourString){
         if (time.contains("点")){
             String [] timePart = time.split("点");
             if (timePart.length == 1){

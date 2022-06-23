@@ -19,7 +19,7 @@ public class FunctionManager {
     public static void onMessage(MessageEvent event) throws InterruptedException, IOException {
         OneMessageEvent oneMessageEvent = new OneMessageEvent(event);
         if (oneMessageEvent.getKind().equals("GROUP")){
-            if (Set.CONFIG.Bot.ApplyGroups.contains(oneMessageEvent.getMessageEvent().getSubject().getId())){
+            if (Set.CONFIG.BotSet.ApplyGroups.contains(oneMessageEvent.getMessageEvent().getSubject().getId())){
                 toApply(oneMessageEvent);
             }
         }else {
@@ -30,20 +30,20 @@ public class FunctionManager {
 
     private static void toApply(OneMessageEvent oneMessageEvent) throws InterruptedException, IOException {
         if (!banMessage(oneMessageEvent)){
-            if ((oneMessageEvent.getOriginMessageList().toString().contains("C&") || oneMessageEvent.getOriginMessageList().toString().contains("c&")) && oneMessageEvent.getFromId() == Set.CONFIG.Bot.Admin) {
+            if ((oneMessageEvent.getOriginMessageList().toString().contains("C&") || oneMessageEvent.getOriginMessageList().toString().contains("c&")) && oneMessageEvent.getFromId() == Set.CONFIG.BotSet.Admin) {
                 logger.info("Message is Command, time ["+oneMessageEvent.getMessageEvent().getTime()+"]");
                 if (!isCommand(oneMessageEvent)){
-                    oneMessageEvent.getMessageEvent().getSubject().sendMessage("宁输入的之类有误呢,"+ Set.CONFIG.Bot.Name+"听不懂呢");
+                    oneMessageEvent.getMessageEvent().getSubject().sendMessage("宁输入的之类有误呢,"+ Set.CONFIG.BotSet.Name+"听不懂呢");
                 }
             }else {
                 if (isReply(oneMessageEvent)){
                     if (Set.CONFIG_VARIABLE.LastSendTime!=null){
                         long temp =  System.currentTimeMillis() - Set.CONFIG_VARIABLE.LastSendTime;
-                        if (temp < Set.CONFIG.Bot.FrequencyOfSpeeches){
+                        if (temp < Set.CONFIG.BotSet.FrequencyOfSpeeches){
                             if (temp>0){
                                 Thread.sleep(temp);
                             }else {
-                                Thread.sleep(Set.CONFIG.Bot.FrequencyOfSpeeches);
+                                Thread.sleep(Set.CONFIG.BotSet.FrequencyOfSpeeches);
                             }
                         }
                     }else {
@@ -96,7 +96,7 @@ public class FunctionManager {
                     banSb(oneMessageEvent);
                     return true;
                 }else if (!Objects.requireNonNull(Objects.requireNonNull(oneMessageEvent.getMessageEvent().getBot().getGroup(oneMessageEvent.getMessageEvent().getSubject().getId())).getMembers().get(oneMessageEvent.getFromId())).getPermission().name().equals("MEMBER") && isBan(msg)){
-                    oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.ToUnableBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
+                    oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.ToUnableBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
                     return true;
                 }
             }
@@ -114,13 +114,13 @@ public class FunctionManager {
         return false;
     }
     private static void banSb(OneMessageEvent oneMessageEvent) {
-        if (Set.CONFIG.Bot.SensitiveWordsBanned == 0){
+        if (Set.CONFIG.BotSet.SensitiveWordsBanned == 0){
             MessageSource.recall(oneMessageEvent.getMessageEvent().getMessage());
-            oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.ToBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
-        }else if (Set.CONFIG.Bot.SensitiveWordsBanned > 0){
+            oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.ToBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
+        }else if (Set.CONFIG.BotSet.SensitiveWordsBanned > 0){
             MessageSource.recall(oneMessageEvent.getMessageEvent().getMessage());
-            Objects.requireNonNull(Objects.requireNonNull(oneMessageEvent.getMessageEvent().getBot().getGroup(oneMessageEvent.getMessageEvent().getSubject().getId())).getMembers().get(oneMessageEvent.getFromId())).mute(Set.CONFIG.Bot.SensitiveWordsBanned);
-                    oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.ToBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
+            Objects.requireNonNull(Objects.requireNonNull(oneMessageEvent.getMessageEvent().getBot().getGroup(oneMessageEvent.getMessageEvent().getSubject().getId())).getMembers().get(oneMessageEvent.getFromId())).mute(Set.CONFIG.BotSet.SensitiveWordsBanned);
+                    oneMessageEvent.getMessageEvent().getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.ToBannedNumberSay, oneMessageEvent.getMessageEvent().getSubject())));
         }
 
     }

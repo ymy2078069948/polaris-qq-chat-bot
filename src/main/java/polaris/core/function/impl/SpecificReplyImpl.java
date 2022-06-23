@@ -22,7 +22,7 @@ public class SpecificReplyImpl implements Function {
     @Override
     public Boolean getResponse(OneMessageEvent event) {
         // 群消息
-        if (event.getKind().equals("GROUP") && Set.CONFIG.Bot.ApplyGroups.contains(event.getTargetId())) {
+        if (event.getKind().equals("GROUP") && Set.CONFIG.BotSet.ApplyGroups.contains(event.getTargetId())) {
             if (Set.CONFIG.FunctionSet.SpecificReply.IfNeedAt){
                 if (event.getOriginMessageList().toString().contains("At")) {
                     return MessageSender.toSend(event);

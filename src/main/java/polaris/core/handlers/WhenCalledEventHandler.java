@@ -28,8 +28,8 @@ public class WhenCalledEventHandler  extends SimpleListenerHost {
     public ListeningStatus onMessage(@NotNull MessageEvent event) throws Exception { // 可以抛出任何异常, 将在 handleException 处理
         OneMessageEvent oneMessageEvent = new OneMessageEvent(event);
         String call = oneMessageEvent.getOriginMessageList().get(0).getContent();
-        if (call != null && call.equals(Set.CONFIG.Bot.Name)){
-            event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.WhenCalled, event.getSubject())));
+        if (call != null && call.equals(Set.CONFIG.BotSet.Name)){
+            event.getSubject().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.WhenCalled, event.getSubject())));
         }
         return ListeningStatus.LISTENING; // 表示继续监听事件
         // return ListeningStatus.STOPPED; // 表示停止监听事件

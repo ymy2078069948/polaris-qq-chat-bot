@@ -222,7 +222,7 @@ public class Http2Api {
             // 获取文件长度
             int len = httpURLConnection.getContentLength();
             // 路径+文件名
-            String pathAndName = Set.CONFIG.Bot.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(1000);
+            String pathAndName = Set.CONFIG.BotSet.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(1000);
 
             // 保存文件
             saveFileByByte(in, pathAndName, len);
@@ -264,7 +264,7 @@ public class Http2Api {
      */
     public static String downloadPicture(String urlList) {
         // 路径+文件名
-        String pathAndName = Set.CONFIG.Bot.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(100000);
+        String pathAndName = Set.CONFIG.BotSet.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(100000);
         try {
             URL url = new URL(urlList);
             DataInputStream dataInputStream = new DataInputStream(url.openStream());
@@ -319,7 +319,7 @@ public class Http2Api {
             // 获取文件长度
             int len = httpURLConnection.getContentLength();
             // 路径+文件名
-            String pathAndName = Set.CONFIG.Bot.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(100000);
+            String pathAndName = Set.CONFIG.BotSet.Workspace+ File.separator +"tempDownload"+ File.separator + new Random().nextInt(100000);
 
             // 保存文件
             saveFileByByte(in, pathAndName, len);

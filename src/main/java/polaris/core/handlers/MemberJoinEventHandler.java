@@ -28,7 +28,7 @@ public class MemberJoinEventHandler extends SimpleListenerHost {
     public ListeningStatus onMessage(@NotNull MemberJoinEvent event) throws Exception { // 可以抛出任何异常, 将在 handleException 处理
         logger.info("[event]    "+event);
         event.getGroup().sendMessage(new At(event.getMember().getId()));
-        event.getGroup().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.Bot.MemberJoinSay, event.getGroup())));
+        event.getGroup().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(Set.CONFIG.BotSet.MemberJoinSay, event.getGroup())));
 
         return ListeningStatus.LISTENING; // 表示继续监听事件
 

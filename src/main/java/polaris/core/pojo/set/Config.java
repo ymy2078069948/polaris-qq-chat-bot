@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Config {
-    public Bot Bot;
+    public BotSet BotSet;
     public FunctionSet FunctionSet;
 }
 

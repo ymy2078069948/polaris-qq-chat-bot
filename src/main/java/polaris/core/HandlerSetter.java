@@ -6,7 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class HandlerSetter {
     public void setHandler() {
-        for (String s : Set.CONFIG.Bot.ActivateHandler) {
+        for (String s : Set.CONFIG.BotSet.ActivateHandler) {
             try {
                 RunVariable.BOT.getEventChannel().registerListenerHost((ListenerHost) Class.forName("polaris.core.handlers."+s).getDeclaredConstructor().newInstance());
 

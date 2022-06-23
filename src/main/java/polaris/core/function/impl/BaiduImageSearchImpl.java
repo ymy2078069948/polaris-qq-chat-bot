@@ -70,7 +70,7 @@ public class BaiduImageSearchImpl implements Function {
 
     private void buildAndSend(String url, Contact contact) throws InterruptedException {
         System.out.println(url);
-        System.setProperty(Set.CONFIG.Bot.SeleniumDriverName,Set.CONFIG.Bot.SeleniumDriverPath);
+        System.setProperty(Set.CONFIG.BotSet.SeleniumDriverName,Set.CONFIG.BotSet.SeleniumDriverPath);
 
         WebDriver driver = new EdgeDriver();
         try {

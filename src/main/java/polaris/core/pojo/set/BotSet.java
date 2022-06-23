@@ -10,7 +10,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bot {
+public class BotSet {
     // 账号
     public Long QQ;
     // 密码

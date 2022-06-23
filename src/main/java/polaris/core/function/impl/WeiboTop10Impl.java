@@ -50,7 +50,7 @@ public class WeiboTop10Impl implements Function {
     }
 
     private void getTop10(Contact contact){
-        System.setProperty(Set.CONFIG.Bot.SeleniumDriverName,Set.CONFIG.Bot.SeleniumDriverPath);
+        System.setProperty(Set.CONFIG.BotSet.SeleniumDriverName,Set.CONFIG.BotSet.SeleniumDriverPath);
         WebDriver driver = new EdgeDriver();
         try {
             driver.get("https://tophub.today/n/KqndgxeLl9");

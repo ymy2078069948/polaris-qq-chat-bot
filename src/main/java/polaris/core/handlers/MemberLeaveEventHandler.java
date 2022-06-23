@@ -26,7 +26,7 @@ public class MemberLeaveEventHandler extends SimpleListenerHost {
     @EventHandler
     public ListeningStatus onMessage(@NotNull MemberLeaveEvent event) throws Exception { // 可以抛出任何异常, 将在 handleException 处理
         logger.info("[event]    "+event);
-        event.getGroup().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(event.getMember().getNameCard()+"&&"+Set.CONFIG.Bot.MemberLeaveSay, event.getGroup())));
+        event.getGroup().sendMessage(Objects.requireNonNull(MessageBuilder.buildMessageChain(event.getMember().getNameCard()+"&&"+Set.CONFIG.BotSet.MemberLeaveSay, event.getGroup())));
         return ListeningStatus.LISTENING; // 表示继续监听事件
 
         // return ListeningStatus.STOPPED; // 表示停止监听事件

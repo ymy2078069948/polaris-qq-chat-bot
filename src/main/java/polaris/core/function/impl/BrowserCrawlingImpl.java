@@ -50,7 +50,7 @@ public class BrowserCrawlingImpl implements Function {
     }
 
     private void getWebPage(Contact contact,int index){
-        System.setProperty(Set.CONFIG.Bot.SeleniumDriverName,Set.CONFIG.Bot.SeleniumDriverPath);
+        System.setProperty(Set.CONFIG.BotSet.SeleniumDriverName,Set.CONFIG.BotSet.SeleniumDriverPath);
         WebDriver driver = new EdgeDriver();
         try {
             driver.get(Set.CONFIG.FunctionSet.BrowserCrawling.UrlList.get(index));
