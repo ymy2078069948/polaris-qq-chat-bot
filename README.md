@@ -1,9 +1,12 @@
 # Polaris
 
-![Polaris](https://github.com/lzt815049548/polaris-qq-chat-bot/blob/main/README/921de2aeb19d5dc69371c8b49707231f1653916221.png)
+![Polaris](https://m.qpic.cn/psc?/V548iLWq2KMuag360X0I36WOzl0bgVdZ/bqQfVz5yrrGYSXMvKr.cqQ0zrmqQw81QMm18McByfjemn2VWVLCrVPkQnvEGoYMXX6iSl*nPNu8EVDia6dsLF9mV9oJynrmaN3m.IhJ41JU!/b&bo=XgWwBLAF.AQDB4Q!&rf=viewer_4)
 
 ---
 
+![Polaris](http://r.photo.store.qq.com/psc?/V548iLWq2KMuag360X0I36WOzl0bgVdZ/bqQfVz5yrrGYSXMvKr.cqT9pKf2Rao24cqxtIZYYUPP4y8ePHS9aK7Tvnsh*iDan0gohaRuSbNV9z918qPUbJSrINgMH8CeyDfw3t1vU4Ew!/r)
+
+---
 
 
 一个基于miari的qq聊天机器人
