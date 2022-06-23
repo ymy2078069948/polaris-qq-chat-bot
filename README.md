@@ -1,7 +1,5 @@
 # Polaris
 
-![Polaris](http://m.qpic.cn/psc?/V548iLWq2KMuag360X0I36WOzl0bgVdZ/bqQfVz5yrrGYSXMvKr.cqQ0zrmqQw81QMm18McByfjemn2VWVLCrVPkQnvEGoYMXX6iSl*nPNu8EVDia6dsLF9mV9oJynrmaN3m.IhJ41JU!/b&bo=XgWwBLAF.AQDZ.Q!&rf=viewer_4)
-
 ---
 
 
